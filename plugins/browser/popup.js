@@ -1,4 +1,4 @@
-import { api, readTab, savePage, settings } from "./recall.js";
+import { api, readTab, savePage, settings } from "./ifm.js";
 
 const $ = (id) => document.getElementById(id);
 const status = (text) => { $("status").textContent = text; };

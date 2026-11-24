@@ -15,7 +15,7 @@ const SECRETS = [
 export function redact(text) {
   let out = String(text ?? "")
     .replace(/<private>[\s\S]*?<\/private>/gi, "[private]")
-    .replace(/<recall-context>[\s\S]*?<\/recall-context>/g, "")
+    .replace(/<(infinimemory|recall)-context>[\s\S]*?<\/\1-context>/g, "") // ours; recall-context is the tag before the rename
     .replace(/<(system-reminder|command|local-command)[\w-]*>[\s\S]*?<\/\1[\w-]*>/g, "");
   for (const [re, to] of SECRETS) out = out.replace(re, to);
   out = out.trim();

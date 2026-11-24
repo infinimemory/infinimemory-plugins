@@ -1,4 +1,4 @@
-import { DEFAULTS, settings, signIn } from "./recall.js";
+import { DEFAULTS, settings, signIn } from "./ifm.js";
 
 const fields = Object.keys(DEFAULTS);
 const $ = (id) => document.getElementById(id);

@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/recall.mjs\" start",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/ifm.mjs\" start",
             "timeout": 8
           }
         ]
@@ -16,7 +16,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/recall.mjs\" prompt",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/ifm.mjs\" prompt",
             "timeout": 5
           }
         ]
@@ -27,7 +27,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/recall.mjs\" turn_end",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/ifm.mjs\" turn_end",
             "timeout": 15,
             "async": true
           }
@@ -39,7 +39,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/recall.mjs\" compact",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/ifm.mjs\" compact",
             "timeout": 15
           }
         ]
@@ -50,7 +50,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/recall.mjs\" end",
+            "command": "node \"${CLAUDE_PLUGIN_ROOT}/scripts/ifm.mjs\" end",
             "timeout": 15
           }
         ]

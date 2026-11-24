@@ -1,7 +1,7 @@
 // Infinimemory for OpenCode. Copyright © 2026 Infinimemory. All rights reserved.
 // Injects About and relevant notes into each message and saves the conversation as it goes, turn by turn.
-// Tools (recall_find / recall_save) come from Infinimemory's MCP server (`ifm setup opencode`).
-// Needs `ifm login` (or RECALL_API_KEY); without it the plugin logs how to log in and does nothing.
+// Tools (ifm_find / ifm_save) come from Infinimemory's MCP server (`ifm setup opencode`).
+// Needs `ifm login` (or INFINIMEMORY_API_KEY); without it the plugin logs how to log in and does nothing.
 // The work is done by hook.mjs, the same core `ifm hook` runs for every agent (copied from packages/cli/bin).
 import { capturing, login, NOT_LOGGED_IN, promptContext, realmFor, send, spool, startContext } from "./hook.mjs";
 
@@ -9,10 +9,10 @@ import { capturing, login, NOT_LOGGED_IN, promptContext, realmFor, send, spool, 
 export const textOf = (parts) => parts.filter((p) => p.type === "text" && !p.synthetic && !p.ignored).map((p) => p.text).join("\n").trim();
 
 /** @type {import("@opencode-ai/plugin").Plugin} */
-export const RecallPlugin = async ({ client, directory }) => {
+export const InfinimemoryPlugin = async ({ client, directory }) => {
   const auth = login();
   if (!auth) {
-    await client?.app?.log?.({ body: { service: "recall", level: "warn", message: NOT_LOGGED_IN } }).catch(() => {});
+    await client?.app?.log?.({ body: { service: "ifm", level: "warn", message: NOT_LOGGED_IN } }).catch(() => {});
     return {};
   }
   const where = realmFor(directory), { realm } = where;

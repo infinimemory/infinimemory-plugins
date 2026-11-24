@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Copyright © 2026 Infinimemory. All rights reserved.
 // Infinimemory's MCP server for Claude Code, over stdio: forwards each JSON-RPC line to <server>/mcp with the key from
-// `ifm login` (or RECALL_API_KEY). Without a login it refuses to start, so the tools never appear unauthenticated.
+// `ifm login` (or INFINIMEMORY_API_KEY). Without a login it refuses to start, so the tools never appear unauthenticated.
 import { createInterface } from "node:readline";
 import { login, NOT_LOGGED_IN } from "./hook.mjs";
 
@@ -17,7 +17,7 @@ async function fetchRetrying(target, init, waits = [500, 1500]) {
     catch (err) {
       const code = err?.cause?.code || err?.code || err?.cause?.message || err?.message || "network error";
       if (attempt >= waits.length) throw new Error(`Couldn't reach Infinimemory (${code}) after ${attempt + 1} tries. Check the connection and try again.`);
-      process.stderr.write(`recall: network error (${code}), retrying\n`);
+      process.stderr.write(`ifm: network error (${code}), retrying\n`);
       await new Promise((ok) => setTimeout(ok, waits[attempt]));
     }
   }

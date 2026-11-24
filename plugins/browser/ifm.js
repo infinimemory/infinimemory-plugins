@@ -54,7 +54,7 @@ export const saveSelection = async ({ title, url, text }) => {
   });
 };
 
-const PENDING = "recall.signIn"; // { state, expires }: one sign-in in flight
+const PENDING = "ifm.signIn"; // { state, expires }: one sign-in in flight
 /** Sign in through the console, like `ifm login`: it asks the user, mints a key for this browser and sends it here. */
 export async function signIn() {
   const s = await settings(), state = [...crypto.getRandomValues(new Uint8Array(16))].map((b) => b.toString(16).padStart(2, "0")).join("");

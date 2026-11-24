@@ -1,4 +1,4 @@
-import { acceptSignIn, readTab, savePage, saveSelection } from "./recall.js";
+import { acceptSignIn, readTab, savePage, saveSelection } from "./ifm.js";
 
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({ id: "selection", title: "Save selection to Infinimemory", contexts: ["selection"] });
@@ -27,7 +27,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
 
 // The console's sign-in answer. Only the Infinimemory site can send here (manifest: externally_connectable).
 chrome.runtime.onMessageExternal.addListener((message, sender, respond) => {
-  if (message?.type !== "recall-login") return false;
+  if (message?.type !== "ifm-login") return false;
   acceptSignIn(message, sender.origin).then(respond, () => respond({ ok: false }));
   return true; // answers asynchronously
 });

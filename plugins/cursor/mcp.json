@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "recall": {
+    "ifm": {
       "command": "npx",
       "args": [
         "-y",

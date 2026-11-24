@@ -1,5 +1,5 @@
 # Append to ~/.codex/config.toml (or run `npx @tryrecallai/cli setup codex`).
 # Infinimemory's MCP server runs through the CLI and signs in with `ifm login`; without a login it won't start.
-[mcp_servers.recall]
+[mcp_servers.ifm]
 command = "npx"
 args = ["-y", "--prefer-offline", "@tryrecallai/cli", "mcp"]

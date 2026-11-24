@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Infinimemory for Claude Code. Copyright © 2026 Infinimemory. All rights reserved.
-// Run by the plugin's hooks: `node recall.mjs <start|prompt|turn_end|compact|end>` with the hook's JSON on stdin, and by
-// /ifm:pause: `node recall.mjs pause [hours|off]`.
+// Run by the plugin's hooks: `node ifm.mjs <start|prompt|turn_end|compact|end>` with the hook's JSON on stdin, and by
+// /ifm:pause: `node ifm.mjs pause [hours|off]`.
 // The work is done by hook.mjs, the same core `ifm hook` runs for every agent (copied from packages/cli/bin).
 import { pause, runHook } from "./hook.mjs";
 
