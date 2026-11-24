@@ -14,7 +14,7 @@ import { homedir } from "node:os";
 import { basename, dirname, join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
-export const DEFAULT_BASE = "https://recallai.nidonic.online";
+export const DEFAULT_BASE = "https://infinimemory.nidonic.online";
 export const NOT_LOGGED_IN = "Infinimemory is off: you are not logged in. Run `npx @tryrecallai/cli login` in a terminal, then start a new session.";
 const ABOUT_CHARS = 2_000; // fits the smallest host injection limit (Codex: 2,500 tokens) with the per-prompt notes
 const NOTE_CHARS = 300, NOTES_PER_PROMPT = 5, MIN_SCORE = 0.5; // below MIN_SCORE a note is mostly a shared keyword

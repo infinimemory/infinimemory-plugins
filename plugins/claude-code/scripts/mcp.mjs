@@ -7,7 +7,7 @@ import { login, NOT_LOGGED_IN } from "./hook.mjs";
 
 const auth = login();
 if (!auth) { process.stderr.write(`${NOT_LOGGED_IN}\n`); process.exit(1); }
-const url = `${(auth.base || "https://recallai.nidonic.online").replace(/\/+$/, "")}/mcp`;
+const url = `${(auth.base || "https://infinimemory.nidonic.online").replace(/\/+$/, "")}/mcp`;
 const reply = (obj) => process.stdout.write(JSON.stringify(obj) + "\n");
 // A network failure before any answer (dropped socket, DNS blip) is retried twice, after 0.5 s and 1.5 s, instead of
 // reaching the agent as a bare "fetch failed". Same policy as `ifm mcp` in packages/cli.

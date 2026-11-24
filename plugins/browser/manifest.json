@@ -10,6 +10,7 @@
     "scripting"
   ],
   "host_permissions": [
+    "https://infinimemory.nidonic.online/*",
     "https://recallai.nidonic.online/*"
   ],
   "optional_host_permissions": [
@@ -36,6 +37,7 @@
   "author": "Infinimemory",
   "externally_connectable": {
     "matches": [
+      "https://infinimemory.nidonic.online/*",
       "https://recallai.nidonic.online/*"
     ]
   }

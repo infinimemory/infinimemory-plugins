@@ -1,11 +1,11 @@
 {
   "name": "ifm",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Long-term memory for Claude Code: brings in what Infinimemory knows about the project at the start of each session and with each prompt, and keeps learning from the conversation as it grows.",
   "author": {
     "name": "Infinimemory"
   },
-  "homepage": "https://recallai.nidonic.online",
+  "homepage": "https://infinimemory.nidonic.online",
   "keywords": [
     "memory",
     "infinimemory",

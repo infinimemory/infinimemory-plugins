@@ -1,6 +1,6 @@
 // Shared by the service worker, the popup and the options page.
 import { redact } from "./redact.js"; // the agents' privacy pass (generated from the CLI's hook core)
-export const DEFAULTS = { apiKey: "", baseUrl: "https://recallai.nidonic.online", namespace: "browser" };
+export const DEFAULTS = { apiKey: "", baseUrl: "https://infinimemory.nidonic.online", namespace: "browser" };
 export const MAX_PAGE_CHARS = 200_000; // well under the API's 2 MB file limit
 
 export const settings = async () => ({ ...DEFAULTS, ...(await chrome.storage.local.get(Object.keys(DEFAULTS))) });
