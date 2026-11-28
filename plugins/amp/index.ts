@@ -1,8 +1,8 @@
-// Infinimemory for Amp. Copyright © 2026 Infinimemory. All rights reserved.
+// MemStack for Amp. Copyright © 2026 MemStack. All rights reserved.
 // An Amp plugin (Bun): agent.start appends About (first turn of a thread) and the notes relevant to the prompt to the
-// user's message; agent.end saves the turn's messages. Installed by `ifm setup amp` into
-// ~/.config/amp/plugins/ifm/ with hook.mjs, the core every Infinimemory agent hook runs (copied from packages/cli/bin).
-// Needs `ifm login` (or INFINIMEMORY_API_KEY); without it the plugin does nothing.
+// user's message; agent.end saves the turn's messages. Installed by `mem setup amp` into
+// ~/.config/amp/plugins/mem/ with hook.mjs, the core every MemStack agent hook runs (copied from packages/cli/bin).
+// Needs `mem login` (or MEMSTACK_API_KEY); without it the plugin does nothing.
 // Types: @ampcode/plugin PluginEventMap (agent.start → { message?: { content, display? } }; agent.end: { status, messages }).
 import { capturing, login, promptContext, realmFor, send, spool, startContext } from "./hook.mjs";
 
@@ -13,7 +13,7 @@ const textOf = (m: Message) => (m.content ?? []).filter((b) => b?.type === "text
 const within = <T>(ms: number, p: Promise<T>) => Promise.race([p, new Promise<null>((done) => setTimeout(() => done(null), ms))]);
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export default function infinimemory(amp: any) {
+export default function memstack(amp: any) {
   const started = new Set<string>(); // threads that already got About
   const cwd = () => {
     const root = amp.system?.workspaceRoot;

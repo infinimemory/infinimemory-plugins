@@ -1,16 +1,16 @@
 {
-  "name": "infinimemory",
+  "name": "memstack",
   "owner": {
-    "name": "Infinimemory"
+    "name": "MemStack"
   },
   "metadata": {
-    "description": "Infinimemory: long-term memory for AI coding agents."
+    "description": "MemStack: long-term memory for AI coding agents."
   },
   "plugins": [
     {
-      "name": "ifm",
+      "name": "mem",
       "source": "./plugins/claude-code",
-      "description": "Long-term memory for Claude Code, backed by Infinimemory."
+      "description": "Long-term memory for Claude Code, backed by MemStack."
     }
   ]
 }

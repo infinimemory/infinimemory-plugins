@@ -1,7 +1,7 @@
 {
-  "name": "infinimemory-cline",
+  "name": "memstack-cline",
   "version": "0.4.0",
-  "description": "Long-term memory for Cline, backed by Infinimemory.",
+  "description": "Long-term memory for Cline, backed by MemStack.",
   "type": "module",
   "private": true,
   "main": "index.js",
@@ -21,5 +21,5 @@
     "test": "node --test index.test.js"
   },
   "license": "SEE LICENSE IN LICENSE",
-  "author": "Infinimemory"
+  "author": "MemStack"
 }

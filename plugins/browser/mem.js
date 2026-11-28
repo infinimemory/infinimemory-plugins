@@ -7,7 +7,7 @@ export const settings = async () => ({ ...DEFAULTS, ...(await chrome.storage.loc
 
 export async function api(method, path, body) {
   const s = await settings();
-  if (!s.apiKey) throw new Error("Add your Infinimemory API key in the extension options first.");
+  if (!s.apiKey) throw new Error("Add your MemStack API key in the extension options first.");
   const res = await fetch(`${s.baseUrl.replace(/\/+$/, "")}/v1/realms/${encodeURIComponent(s.namespace)}${path}`, {
     method,
     headers: { Authorization: `Bearer ${s.apiKey}`, "Content-Type": "application/json" },
@@ -15,7 +15,7 @@ export async function api(method, path, body) {
     signal: AbortSignal.timeout(15_000),
   });
   const data = await res.json().catch(() => null);
-  if (!res.ok) throw new Error(data?.error ?? `Infinimemory returned HTTP ${res.status}`);
+  if (!res.ok) throw new Error(data?.error ?? `MemStack returned HTTP ${res.status}`);
   return data;
 }
 
@@ -55,7 +55,7 @@ export const saveSelection = async ({ title, url, text }) => {
 };
 
 const PENDING = "ifm.signIn"; // { state, expires }: one sign-in in flight
-/** Sign in through the console, like `ifm login`: it asks the user, mints a key for this browser and sends it here. */
+/** Sign in through the console, like `mem login`: it asks the user, mints a key for this browser and sends it here. */
 export async function signIn() {
   const s = await settings(), state = [...crypto.getRandomValues(new Uint8Array(16))].map((b) => b.toString(16).padStart(2, "0")).join("");
   await chrome.storage.local.set({ [PENDING]: { state, expires: Date.now() + 10 * 60_000 } });

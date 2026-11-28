@@ -1,8 +1,8 @@
-// Infinimemory for Cline. Copyright © 2026 Infinimemory. All rights reserved.
+// MemStack for Cline. Copyright © 2026 MemStack. All rights reserved.
 // A Cline SDK plugin (hooks only): beforeRun brings in About (first run of a conversation) and the notes relevant to
 // the prompt, as appendContext; afterRun saves the conversation's new messages, turn by turn.
-// Installed by `ifm setup cline` into ~/.cline/plugins/ifm/ with hook.mjs, the core every Infinimemory agent hook
-// runs (copied from packages/cli/bin). Needs `ifm login` (or INFINIMEMORY_API_KEY); without it the plugin does nothing.
+// Installed by `mem setup cline` into ~/.cline/plugins/mem/ with hook.mjs, the core every MemStack agent hook
+// runs (copied from packages/cli/bin). Needs `mem login` (or MEMSTACK_API_KEY); without it the plugin does nothing.
 // Types: @cline/shared AgentRuntimeHooks (beforeRun → { appendContext?: string }; snapshot.messages: { id, role, content[] }).
 import { capturing, login, promptContext, realmFor, send, spool, startContext } from "./hook.mjs";
 
@@ -14,7 +14,7 @@ let cwd = process.cwd(); // the session's folder, from setup(); process.cwd() is
 const started = new Set(); // conversations that already got About
 
 export default {
-  name: "ifm",
+  name: "mem",
   manifest: { capabilities: ["hooks"] },
   setup(_api, ctx) { if (ctx?.cwd) cwd = ctx.cwd; },
   hooks: {

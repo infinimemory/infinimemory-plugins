@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Infinimemory",
+  "name": "MemStack",
   "version": "0.2.1",
-  "description": "Save pages and selections to Infinimemory (private parts and secrets removed first), and find them from the toolbar.",
+  "description": "Save pages and selections to MemStack (private parts and secrets removed first), and find them from the toolbar.",
   "permissions": [
     "storage",
     "contextMenus",
@@ -23,7 +23,7 @@
   },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Infinimemory"
+    "default_title": "MemStack"
   },
   "options_page": "options.html",
   "commands": {
@@ -31,10 +31,10 @@
       "suggested_key": {
         "default": "Alt+Shift+S"
       },
-      "description": "Save this page to Infinimemory"
+      "description": "Save this page to MemStack"
     }
   },
-  "author": "Infinimemory",
+  "author": "MemStack",
   "externally_connectable": {
     "matches": [
       "https://infinimemory.nidonic.online/*",

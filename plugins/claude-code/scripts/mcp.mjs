@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-// Copyright © 2026 Infinimemory. All rights reserved.
-// Infinimemory's MCP server for Claude Code, over stdio: forwards each JSON-RPC line to <server>/mcp with the key from
-// `ifm login` (or INFINIMEMORY_API_KEY). Without a login it refuses to start, so the tools never appear unauthenticated.
+// Copyright © 2026 MemStack. All rights reserved.
+// MemStack's MCP server for Claude Code, over stdio: forwards each JSON-RPC line to <server>/mcp with the key from
+// `mem login` (or MEMSTACK_API_KEY). Without a login it refuses to start, so the tools never appear unauthenticated.
 import { createInterface } from "node:readline";
 import { login, NOT_LOGGED_IN } from "./hook.mjs";
 
@@ -10,14 +10,14 @@ if (!auth) { process.stderr.write(`${NOT_LOGGED_IN}\n`); process.exit(1); }
 const url = `${(auth.base || "https://infinimemory.nidonic.online").replace(/\/+$/, "")}/mcp`;
 const reply = (obj) => process.stdout.write(JSON.stringify(obj) + "\n");
 // A network failure before any answer (dropped socket, DNS blip) is retried twice, after 0.5 s and 1.5 s, instead of
-// reaching the agent as a bare "fetch failed". Same policy as `ifm mcp` in packages/cli.
+// reaching the agent as a bare "fetch failed". Same policy as `mem mcp` in packages/cli.
 async function fetchRetrying(target, init, waits = [500, 1500]) {
   for (let attempt = 0; ; attempt++) {
     try { return await fetch(target, init); }
     catch (err) {
       const code = err?.cause?.code || err?.code || err?.cause?.message || err?.message || "network error";
-      if (attempt >= waits.length) throw new Error(`Couldn't reach Infinimemory (${code}) after ${attempt + 1} tries. Check the connection and try again.`);
-      process.stderr.write(`ifm: network error (${code}), retrying\n`);
+      if (attempt >= waits.length) throw new Error(`Couldn't reach MemStack (${code}) after ${attempt + 1} tries. Check the connection and try again.`);
+      process.stderr.write(`mem: network error (${code}), retrying\n`);
       await new Promise((ok) => setTimeout(ok, waits[attempt]));
     }
   }
@@ -31,9 +31,9 @@ for await (const line of createInterface({ input: process.stdin, terminal: false
   fetchRetrying(url, { method: "POST", body: line, headers: { Authorization: `Bearer ${auth.key}`, "Content-Type": "application/json", Accept: "application/json, text/event-stream" } })
     .then(async (res) => {
       if (!wantsReply) return;
-      if (res.status === 401) throw new Error("Your Infinimemory login is no longer valid. Run `npx @tryrecallai/cli login`.");
+      if (res.status === 401) throw new Error("Your MemStack login is no longer valid. Run `npx @tryrecallai/cli login`.");
       const text = (await res.text()).trim();
-      if (text.startsWith("{")) process.stdout.write(text + "\n"); else throw new Error(`Infinimemory returned HTTP ${res.status}`);
+      if (text.startsWith("{")) process.stdout.write(text + "\n"); else throw new Error(`MemStack returned HTTP ${res.status}`);
     })
     .catch((err) => { if (wantsReply) reply({ jsonrpc: "2.0", id: msg.id, error: { code: -32603, message: err.message } }); });
 }

@@ -1,4 +1,4 @@
-import { DEFAULTS, settings, signIn } from "./ifm.js";
+import { DEFAULTS, settings, signIn } from "./mem.js";
 
 const fields = Object.keys(DEFAULTS);
 const $ = (id) => document.getElementById(id);

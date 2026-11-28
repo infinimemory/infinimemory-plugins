@@ -1,21 +1,21 @@
-Infinimemory — Proprietary Software License
+MemStack — Proprietary Software License
 
-Copyright © 2026 Infinimemory. All rights reserved.
+Copyright © 2026 MemStack. All rights reserved.
 
-Infinimemory, including its source code, object code, website, API, software development kit, command-line
+MemStack, including its source code, object code, website, API, software development kit, command-line
 tool, MCP server, plugins, documentation and related materials (the "Software"), is proprietary software
-owned by Infinimemory.
+owned by MemStack.
 
 Except for the limited install license below, no permission is granted to any person to copy, redistribute,
 modify, sublicense, or commercially exploit the Software, in whole or in part, without prior written
-authorization from Infinimemory. Any use of the Software not expressly authorized in writing by Infinimemory
+authorization from MemStack. Any use of the Software not expressly authorized in writing by MemStack
 is prohibited.
 
-Limited install license. Infinimemory grants you a non-exclusive, non-transferable, revocable license to
-download and install unmodified copies of (a) the Infinimemory plugins from the official public repository at
-https://github.com/infinimemory/infinimemory-plugins and (b) the Infinimemory command-line tool and software development kit
+Limited install license. MemStack grants you a non-exclusive, non-transferable, revocable license to
+download and install unmodified copies of (a) the MemStack plugins from the official public repository at
+https://github.com/infinimemory/infinimemory-plugins and (b) the MemStack command-line tool and software development kit
 from the official npm packages @tryrecallai/cli and @tryrecallai/sdk, on your own devices and servers, and to
-run them solely to access the Infinimemory service at https://infinimemory.nidonic.online. This license does not
+run them solely to access the MemStack service at https://infinimemory.nidonic.online. This license does not
 permit you to modify, redistribute, sublicense, resell, or publish those copies, or to use them with any
 other service, and it grants no rights to any other part of the Software. It ends automatically if you
 breach these terms.
@@ -25,7 +25,7 @@ See THIRD-PARTY-NOTICES.md. Nothing in this license limits rights granted by tho
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
 LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO
-EVENT SHALL INFINIMEMORY BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM, OUT OF OR IN
+EVENT SHALL MEMSTACK BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR ITS USE.
 
-For licensing or permission requests, contact Infinimemory.
+For licensing or permission requests, contact MemStack.

@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "ifm": {
+    "mem": {
       "command": "npx",
       "args": [
         "-y",

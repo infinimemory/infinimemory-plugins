@@ -1,7 +1,7 @@
 {
-  "name": "opencode-infinimemory",
+  "name": "opencode-memstack",
   "version": "0.4.0",
-  "description": "Long-term memory for OpenCode, backed by Infinimemory.",
+  "description": "Long-term memory for OpenCode, backed by MemStack.",
   "type": "module",
   "main": "index.js",
   "exports": "./index.js",
@@ -16,10 +16,10 @@
     "opencode",
     "plugin",
     "memory",
-    "infinimemory"
+    "memstack"
   ],
   "scripts": {
     "test": "node --test index.test.js"
   },
-  "author": "Infinimemory"
+  "author": "MemStack"
 }
